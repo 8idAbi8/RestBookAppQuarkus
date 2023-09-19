@@ -9,7 +9,11 @@ import java.util.Optional;
 @ApplicationScoped  // one instance of bean for application
 public class BookRepository {
 
-    @ConfigProperty(name = "books.genre", defaultValue = "IT")
+    /* Inject configuration proprety named "books.genre".
+    The application will attempt to fetch the value of this configuration property.
+    If the property is not found, it will use the default value.
+     */
+    @ConfigProperty(name = "books.genre", defaultValue = "Sci-Fi")
     String genre;
 
 
